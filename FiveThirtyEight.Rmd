@@ -1,0 +1,31 @@
+---
+title: "FiveThirtyEight"
+output: html_document
+---
+Madison Nareski & Julie Reighard
+```{r}
+library(tidyverse)
+library(fivethirtyeight)
+head(drug_use)
+```
+```{r}
+ggplot(data = drug_use, mapping = aes(x=alcohol_freq)) + geom_bar()+labs(x= "Alcohol Frequency",y="Number of Drinks", title="How Often People Drink" )
+
+
+```
+This graph represents the number of drinks a person has with how frequently the drink.
+```{r}
+ggplot(data = drug_use, mapping = aes(x=age, y=alcohol_use)) + geom_point()+labs(x="Age", y="Alcohol Use", title="Relationship Between Age and Alcohol Use")
+```
+This graph shows the relationship between how old someone is and how mant times they drink.
+```{r}
+ggplot(data = drug_use, mapping = aes(x=marijuana_use, y=alcohol_use,size=n, color=age)) + geom_point()+labs(x="Marijuana Use", y="Alcohol Use", title="Relationship Between Marijuana Use and Alcohol Use")
+```
+This graph shows the relationship between when people use alcohol and marijuana together along with their age, while the size represents how many people are doing both.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
